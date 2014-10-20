@@ -3,6 +3,7 @@ require 'bindata/io'
 require 'bindata/lazy'
 require 'bindata/name'
 require 'bindata/offset'
+require 'bindata/fuzz'
 require 'bindata/params'
 require 'bindata/registry'
 require 'bindata/sanitize'
@@ -14,6 +15,7 @@ module BinData
     include Framework
     include CheckOrAdjustOffsetPlugin
     include RegisterNamePlugin
+	include FuzzerPlugin
 
     class << self
       # Instantiates this class and reads from +io+, returning the newly
